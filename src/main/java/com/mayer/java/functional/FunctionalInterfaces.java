@@ -14,7 +14,6 @@ import java.util.function.Supplier;
 public class FunctionalInterfaces {
 
 	public static void main(String[] args) {
-
 		// Testing interface default method (sqrt in Formula interface)
 		Formula formula = new Formula() {
 			@Override
@@ -79,29 +78,28 @@ public class FunctionalInterfaces {
 		//function apply
 		
 		Function<String, Integer> toInteger = Integer::valueOf;
-        Integer result = toInteger.apply("987");
-        System.out.println(result);
-        
-        //suppliers
-        Supplier stringSupplier = String::new; 
-        System.out.println(stringSupplier.get());
-        
-        Consumer greeter = (p) -> System.out.println("Hello, " + p); 
-        greeter.accept("Anakin Skywalker");
-        
-        
-        // test stream filter
-        List<String> stringCollection = new ArrayList<>(); 
-        stringCollection.add("ddd2"); 
-        stringCollection.add("aaa2"); 
-        stringCollection.add("bbb1"); 
-        stringCollection.add("aaa1"); 
-        stringCollection.add("bbb3"); 
-        stringCollection.add("ccc"); 
-        stringCollection.add("bbb2"); 
-        stringCollection.add("ddd1");
-        stringCollection.stream().filter((s) -> s.startsWith("a")).forEach(System.out::println);
-
+	        Integer result = toInteger.apply("987");
+	        System.out.println(result);
+	        
+	        //suppliers
+	        Supplier stringSupplier = String::new; 
+	        System.out.println(stringSupplier.get());
+	        
+	        Consumer greeter = (p) -> System.out.println("Hello, " + p); 
+	        greeter.accept("Anakin Skywalker");
+	        
+	        
+	        // test stream filter
+	        List<String> stringCollection = new ArrayList<>(); 
+	        stringCollection.add("ddd2"); 
+	        stringCollection.add("aaa2"); 
+	        stringCollection.add("bbb1"); 
+	        stringCollection.add("aaa1"); 
+	        stringCollection.add("bbb3"); 
+	        stringCollection.add("ccc"); 
+	        stringCollection.add("bbb2"); 
+	        stringCollection.add("ddd1");
+	        stringCollection.stream().filter((s) -> s.startsWith("a")).forEach(System.out::println);
 	}
 
 }
